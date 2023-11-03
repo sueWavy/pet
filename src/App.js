@@ -1,7 +1,8 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  return <div className="App">hi</div>;
+  return <Outlet />;
 }
 
 export default App;
