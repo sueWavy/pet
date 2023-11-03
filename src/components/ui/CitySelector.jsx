@@ -2,7 +2,11 @@ import React from "react";
 
 export default function CitySelector({ selectedCity, handleCityChange }) {
   return (
-    <select value={selectedCity} onChange={handleCityChange}>
+    <select
+      value={selectedCity}
+      onChange={handleCityChange}
+      className="bg-inherit"
+    >
       <option value={"Seoul"}>서울</option>
       <option value={"Incheon"}>인천</option>
       <option value={"Seongnam"}>성남</option>

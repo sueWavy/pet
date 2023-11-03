@@ -9,7 +9,9 @@ export default function Header() {
         <MdPets />
         <h1 className="ml-2">같이 산책할땐 멍개팅</h1>
       </header>
-      <Weather />
+      <div className="">
+        <Weather />
+      </div>
     </>
   );
 }
