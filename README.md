@@ -28,5 +28,8 @@
 
 ### 작업하며 배운점
 
-- react-dom.development.js:86 Warning: Invalid DOM property `class`. Did you mean `className`? 에러는 말그대로 className이 아닌 class를 사용해서 발생 (리액트에서는 className을 권장한다)
-- API KEY가 정상적인데도 401에러가 뜨는 이유 -> .env 같은 파일을 변경했을 때는 프로젝트를 재실행해야 변경사항이 적용된다.
+- react-dom.development.js:86 Warning: Invalid DOM property `class`. Did you mean `className`? <br/>
+  👉 에러는 말그대로 className이 아닌 class를 사용해서 발생 (리액트에서는 className을 권장한다)
+
+- API KEY가 정상적인데도 401에러가 뜨는 이유 <br/>
+  👉 .env 같은 파일을 변경했을 때는 프로젝트를 재실행해야 변경사항이 적용된다.
