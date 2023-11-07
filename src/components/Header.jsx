@@ -13,13 +13,13 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full p-4 bg-brand font-[KCCChassam]">
-        <nav className="flex items-center justify-around">
-          <div className="flex items-center text-white text-2xl">
+      <header className="w-screen p-4 bg-brand font-[KCCChassam]">
+        <nav className="flex items-center justify-around sm:flex-col">
+          <div className="flex items-center text-white text-2xl sm:mb-3">
             <MdPets />
             <h1 className="ml-2">같이 산책할땐 멍개팅 !</h1>
           </div>
-          <div className="flex items-center bg-white rounded-xl pl-3 overflow-hidden">
+          <div className="flex items-center bg-white rounded-xl pl-3 overflow-hidden sm:mb-3">
             <input type="text" className="mr-2 focus:outline-none" />
             <BsFillSearchHeartFill className=" text-brand mr-2" />
           </div>
