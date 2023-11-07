@@ -1,20 +1,22 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
+import { useGetData } from "../hooks/getData";
 
-export default function Home() {
-  useEffect(() => {
-    const form = new FormData();
+function Home() {
+  const { data, isLoading, isError, error } = useGetData();
 
-    form.append("mode", "test");
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-    axios
-      .post("http://43.201.39.118/api/main.php", form, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((data) => console.log(data));
-  }, []);
+  if (isError) {
+    return <div>Error: {error.message}</div>;
+  }
 
-  return <div>Home</div>;
+  return (
+    <div>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
 }
+
+export default Home;
