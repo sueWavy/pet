@@ -48,7 +48,7 @@ export default function Weather() {
   const weatherIconUrl = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
 
   return (
-    <section className="flex items-center justify-center list-none bg-slate-300 sm:flex-wrap">
+    <section className="flex items-center justify-center list-none text-sm bg-slate-300 sm:flex-wrap sm:text-xs sm:p-1">
       <div className="flex">
         <div className="flex items-center">
           오늘의
@@ -63,7 +63,7 @@ export default function Weather() {
           <p>{weather[0].description}</p>
         </div>
       </div>
-      <div className="flex ml-2 space-x-3 sm:text-xs">
+      <div className="flex ml-2 space-x-3 ">
         <li>온도 : {celsiusTemp}°C</li>
         <li>체감 온도 : {Math.round(feels_like - 273.15)}°C</li>
         <li>습도 : {humidity}%</li>
