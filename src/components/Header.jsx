@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 export default function Header() {
   const navigate = useNavigate();
 
+  const handleHome = (e) => {
+    navigate("/");
+  };
+
   const handleLogin = (e) => {
     navigate("/login");
   };
@@ -15,7 +19,10 @@ export default function Header() {
     <>
       <header className="w-screen p-4 bg-brand font-[KCCChassam]">
         <nav className="flex items-center justify-around sm:flex-col">
-          <div className="flex items-center text-white text-2xl sm:mb-3">
+          <div
+            onClick={handleHome}
+            className="flex items-center cursor-pointer text-white text-2xl sm:mb-3"
+          >
             <MdPets />
             <h1 className="ml-2">같이 산책할땐 멍개팅 !</h1>
           </div>

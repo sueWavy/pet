@@ -1,20 +1,24 @@
+import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./index.css";
 import App from "./App";
+import DefaultLayout from "./layout/DefaultLayout";
+import NoHeaderLayout from "./layout/NoHeaderLayout";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import NoHeaderLayout from "./layout/NoHeaderLayout";
-import DefaultLayout from "./layout/DefaultLayout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <NotFound />,
+    errorElement: (
+      <DefaultLayout>
+        <NotFound />
+      </DefaultLayout>
+    ),
     children: [
       {
         index: true,
