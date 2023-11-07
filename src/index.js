@@ -5,6 +5,9 @@ import "./index.css";
 import App from "./App";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NoHeaderLayout from "./layout/NoHeaderLayout";
+import DefaultLayout from "./layout/DefaultLayout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -16,7 +19,19 @@ const router = createBrowserRouter([
       {
         index: true,
         path: "/",
-        element: <Home />,
+        element: (
+          <DefaultLayout>
+            <Home />
+          </DefaultLayout>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <NoHeaderLayout>
+            <Login />
+          </NoHeaderLayout>
+        ),
       },
     ],
   },
