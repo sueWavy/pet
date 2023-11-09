@@ -1,6 +1,8 @@
+<div>
+  
 # 🐶 Pet Meeting 강아지 미팅
 
-### 틈틈히 작업하기
+### ⚡️ 틈틈히 작업하기
 
 | 학습해서 사용할 내용          |                                  진행상황                                  |
 | :---------------------------- | :------------------------------------------------------------------------: |
@@ -28,16 +30,16 @@
 | 배포                     | wait |
 | 리팩토링                     | wait |
 
-### Tree 구조 ( src )
+### 📔 Tree 구조 ( src )
 <img width="264" alt="스크린샷 2023-11-09 오후 4 35 34" src="https://github.com/sueWavy/pet/assets/148526219/ceca9264-ec44-4dd3-95ee-b6714611eb93">
 
-### API 명세서 ( PostMan )
+### 📋 API 명세서 ( PostMan )
 <img width="1390" alt="image" src="https://github.com/sueWavy/pet/assets/148526219/41463eff-f0f5-4668-9266-99d5140520c8">
 
 
 
 
-### 트러블 슈팅
+### 🤯 트러블 슈팅
 
 - react-dom.development.js:86 Warning: Invalid DOM property `class`. Did you mean `className`? <br/>
   👉 에러는 말그대로 className이 아닌 class를 사용해서 발생 (리액트에서는 className을 권장한다)
@@ -45,7 +47,9 @@
 - API KEY가 정상적인데도 401에러가 뜨는 이유 <br/>
   👉 .env 같은 파일을 변경했을 때는 프로젝트를 재실행해야 변경사항이 적용된다.
 
-### 수정 사항
+### 🧐 수정 사항
 
 - 로그인, 회원가입은 Google 과 Kakao 연동으로 변경 ( 받아온 정보에 추가로 필요한 정보를 입력하는 형식 구상 중 )
-- Recoil 말고 Zustand 로 전역 상태관리를 할지도 모르겠습니다 ( 미정 ) 
+- Recoil 말고 Zustand 로 전역 상태관리를 할지도 모르겠습니다 ( 미정 )
+
+</div>
