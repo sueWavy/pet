@@ -1,5 +1,5 @@
 import React from "react";
-import { MdPets } from "react-icons/md";
+import { GiSittingDog } from "react-icons/gi";
 import { BsFillSearchHeartFill } from "react-icons/bs";
 import Weather from "./Weather";
 import { useNavigate } from "react-router-dom";
@@ -21,10 +21,12 @@ export default function Header() {
         <nav className="flex items-center justify-around sm:flex-col">
           <div
             onClick={handleHome}
-            className="flex items-center cursor-pointer text-white text-2xl sm:mb-3"
+            className="flex items-center cursor-pointer text-white text-3xl  sm:mb-3"
           >
-            <MdPets />
-            <h1 className="ml-2">같이 산책할땐 멍개팅 !</h1>
+            <GiSittingDog />
+            <h1 className="ml-2 font-[YEONGJUPunggiGinsengTTF] ">
+              같이 산책할 땐 멍개팅
+            </h1>
           </div>
           <div className="flex items-center bg-white rounded-xl pl-3 overflow-hidden sm:mb-3">
             <input type="text" className="mr-2 focus:outline-none" />

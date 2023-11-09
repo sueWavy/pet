@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGetData } from "../hooks/getData";
+import List from "../components/List";
 
 function Home() {
   const { data, isLoading, isError, error } = useGetData();
@@ -11,10 +12,11 @@ function Home() {
   if (isError) {
     return <div>Error: {error.message}</div>;
   }
+  console.log(data);
 
   return (
     <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <List />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import { MdPets } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 
 export default function Login() {
@@ -9,7 +8,6 @@ export default function Login() {
     "w-96 flex flex-col items-center justify-center rounded-2xl p-4 bg-white space-y-3 relative z-10";
 
   return (
-    // <div className="w-screen h-screen flex flex-col justify-center items-center space-y-5 bg-brand">
     <div className="relative w-screen h-screen flex flex-col justify-center items-center space-y-5">
       <video
         src="/assets/dog.mp4"
@@ -21,8 +19,7 @@ export default function Login() {
 
       <section className={boxStyle}>
         <div className="flex items-center space-x-1 text-2xl">
-          <h1>멍개팅</h1>
-          <MdPets />
+          <h1>로그인</h1>
         </div>
         <div className="flex flex-col space-y-3">
           <input
