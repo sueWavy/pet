@@ -6,7 +6,7 @@
 | :---------------------------- | :------------------------------------------------------------------------: |
 | React-Router                  |         현재목표 : Params로 데이터 전달넘기기, 보안구간 지정 - ing         |
 | React-Query                   | 현재목표 : 데이터 사용구간 전역세팅 및 동기적으로 데이터 관리해보기 - wait |
-| React-Recoil                  |                   현재목표 : 전역 데이터 관리하기 - wait                   |
+| React-Recoil Or Zustand                 |                   현재목표 : 전역 데이터 관리하기 - wait                   |
 | TailWindCSS                   |            현재목표 : 반응형 웹으로 작동하기 및 다크모드 - wait            |
 | 배포(AWS,Firebase,netlify 등) |                      AWS 학습 후 배포 고민 중 - wait                       |
 
