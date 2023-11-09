@@ -40,6 +40,7 @@
 
 
 ### 🤯 트러블 슈팅
+![스크린샷 2023-11-09 오후 4 50 28](https://github.com/sueWavy/pet/assets/148526219/f27a6f9b-33df-4c9d-b54f-dbf17ab6e6d0)
 
 - react-dom.development.js:86 Warning: Invalid DOM property `class`. Did you mean `className`? <br/>
   👉 에러는 말그대로 className이 아닌 class를 사용해서 발생 (리액트에서는 className을 권장한다)
