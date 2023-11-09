@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 
 export default function Header() {
-  const { user } = useAuthContext();
+  const { handleLogout } = useAuthContext();
 
   const navigate = useNavigate();
 
@@ -17,8 +17,6 @@ export default function Header() {
   const handleLogin = (e) => {
     navigate("/login");
   };
-
-  console.log(user);
 
   return (
     <>
@@ -38,8 +36,8 @@ export default function Header() {
             <BsFillSearchHeartFill className=" text-brand mr-2" />
           </div>
           <ul className="flex items-center text-white space-x-5">
-            {user?.token ? (
-              <li className="px-5">{user.name}님 어서오세요.</li>
+            {localStorage.getItem("token") ? (
+              <li className="px-5">님 어서오세요.</li>
             ) : (
               <li
                 onClick={handleLogin}
@@ -48,17 +46,20 @@ export default function Header() {
                 로그인
               </li>
             )}
-            {user?.token && (
-              <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
+            {localStorage.getItem("token") && (
+              <li
+                onClick={handleLogout}
+                className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105"
+              >
                 로그아웃
               </li>
             )}
-            {user?.token && (
+            {localStorage.getItem("token") && (
               <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
                 마이페이지
               </li>
             )}
-            {user?.token && (
+            {localStorage.getItem("token") && (
               <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
                 글쓰기
               </li>

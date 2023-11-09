@@ -4,7 +4,6 @@ import ListCard from "./ui/ListCard";
 
 export default function List() {
   const data = dummyData;
-  console.log(data);
 
   return (
     <div>

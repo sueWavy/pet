@@ -13,7 +13,6 @@ function Home() {
   if (isError) {
     return <div>Error: {error.message}</div>;
   }
-  console.log(data);
 
   return (
     <main>
