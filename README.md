@@ -28,6 +28,15 @@
 | 배포                     | wait |
 | 리팩토링                     | wait |
 
+### Tree
+<img width="264" alt="스크린샷 2023-11-09 오후 4 35 34" src="https://github.com/sueWavy/pet/assets/148526219/ceca9264-ec44-4dd3-95ee-b6714611eb93">
+
+### API 명세서 ( PostMan )
+<img width="1390" alt="image" src="https://github.com/sueWavy/pet/assets/148526219/41463eff-f0f5-4668-9266-99d5140520c8">
+
+
+
+
 ### 트러블 슈팅
 
 - react-dom.development.js:86 Warning: Invalid DOM property `class`. Did you mean `className`? <br/>
