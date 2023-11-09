@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useGetData } from "../hooks/getData";
 import List from "../components/List";
+import { useAuthContext } from "../context/AuthContext";
 
 function Home() {
   const { data, isLoading, isError, error } = useGetData();
@@ -15,9 +16,9 @@ function Home() {
   console.log(data);
 
   return (
-    <div>
+    <main>
       <List />
-    </div>
+    </main>
   );
 }
 
