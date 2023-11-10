@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { GiSittingDog } from "react-icons/gi";
 import { BsFillSearchHeartFill } from "react-icons/bs";
 import Weather from "./Weather";
@@ -6,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 
 export default function Header() {
-  const { handleLogout } = useAuthContext();
-
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  const { logout } = useAuthContext();
 
   const handleHome = (e) => {
     navigate("/");
@@ -36,7 +36,7 @@ export default function Header() {
             <BsFillSearchHeartFill className=" text-brand mr-2" />
           </div>
           <ul className="flex items-center text-white space-x-5">
-            {localStorage.getItem("token") ? (
+            {token ? (
               <li className="px-5">님 어서오세요.</li>
             ) : (
               <li
@@ -46,20 +46,20 @@ export default function Header() {
                 로그인
               </li>
             )}
-            {localStorage.getItem("token") && (
+            {token && (
               <li
-                onClick={handleLogout}
+                onClick={logout}
                 className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105"
               >
                 로그아웃
               </li>
             )}
-            {localStorage.getItem("token") && (
+            {token && (
               <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
                 마이페이지
               </li>
             )}
-            {localStorage.getItem("token") && (
+            {token && (
               <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
                 글쓰기
               </li>

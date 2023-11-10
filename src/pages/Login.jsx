@@ -9,7 +9,7 @@ export default function Login() {
   const boxStyle =
     "w-96 flex flex-col items-center justify-center rounded-2xl p-4 bg-white space-y-3 relative z-10";
 
-  const { loginWithKakao } = useAuthContext();
+  const { login } = useAuthContext();
 
   return (
     <div className="relative w-screen h-screen flex flex-col justify-center items-center space-y-5">
@@ -33,7 +33,7 @@ export default function Login() {
           <p className="text-center text-slate-400">⎯⎯⎯⎯ 또는 ⎯⎯⎯⎯</p>
           <div>
             <div
-              onClick={loginWithKakao}
+              onClick={login}
               className="flex items-center space-x-2 justify-center cursor-pointer"
             >
               <RiKakaoTalkFill /> <span>카카오로 로그인하기</span>
