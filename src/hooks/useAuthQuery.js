@@ -1,8 +1,6 @@
 import { useQuery } from "react-query";
 import axios from "axios";
 
-const LOGIN_API = process.env.REACT_APP_KAKAO_LOGIN_API;
-
 export const useAuthQuery = (accessToken) => {
   return useQuery("auth", () => fetchData(accessToken), {
     // enabled: !!accessToken,
@@ -17,7 +15,7 @@ const fetchData = async (accessToken) => {
   form.append("mode", "kakao");
   form.append("token", accessToken);
 
-  const response = await axios.post(LOGIN_API, form, {
+  const response = await axios.post("http://43.201.39.118/api/login", form, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
