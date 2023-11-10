@@ -6,6 +6,7 @@ const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   const loginWithKakao = () => {
     window.Kakao.Auth.authorize({
@@ -15,15 +16,13 @@ export function AuthContextProvider({ children }) {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
   };
 
   useEffect(() => {
+    const accessToken = localStorage.getItem("token");
     const form = new FormData();
-    // const accessToken = localStorage.getItem("token") || "";
-    const accessToken = new URLSearchParams(window.location.search).get(
-      "token"
-    );
-
     form.append("mode", "kakao");
     form.append("token", accessToken);
 
@@ -36,6 +35,12 @@ export function AuthContextProvider({ children }) {
       .then((res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
+      })
+      .catch((error) => {
+        console.error("Error during login:", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
