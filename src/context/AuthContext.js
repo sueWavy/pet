@@ -1,12 +1,25 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useAuth } from "../hooks/useAuthQuery";
 
 const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  const { data, isLoading, isError, error } = useAuth();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    console.error("로그인 중 에러 발생:", error);
+    return <div>로그인 중 에러 발생</div>;
+  }
+
+  if (data) {
+    localStorage.setItem("token", data.token);
+  }
 
   const loginWithKakao = () => {
     window.Kakao.Auth.authorize({
@@ -19,30 +32,6 @@ export function AuthContextProvider({ children }) {
     localStorage.removeItem("name");
     localStorage.removeItem("email");
   };
-
-  useEffect(() => {
-    const accessToken = localStorage.getItem("token");
-    const form = new FormData();
-    form.append("mode", "kakao");
-    form.append("token", accessToken);
-
-    axios
-      .post("http://43.201.39.118/api/login", form, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-      })
-      .catch((error) => {
-        console.error("Error during login:", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
 
   return (
     <AuthContext.Provider value={{ loginWithKakao, handleLogout }}>

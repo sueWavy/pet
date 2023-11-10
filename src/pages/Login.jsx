@@ -11,6 +11,10 @@ export default function Login() {
 
   const { loginWithKakao } = useAuthContext();
 
+  const handleKakaoLogin = () => {
+    loginWithKakao();
+  };
+
   return (
     <div className="relative w-screen h-screen flex flex-col justify-center items-center space-y-5">
       <video
@@ -33,7 +37,7 @@ export default function Login() {
           <p className="text-center text-slate-400">⎯⎯⎯⎯ 또는 ⎯⎯⎯⎯</p>
           <div>
             <div
-              onClick={loginWithKakao}
+              onClick={handleKakaoLogin}
               className="flex items-center space-x-2 justify-center cursor-pointer"
             >
               <RiKakaoTalkFill /> <span>카카오로 로그인하기</span>
