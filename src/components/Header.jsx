@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { GiSittingDog } from "react-icons/gi";
 import { BsFillSearchHeartFill } from "react-icons/bs";
 import Weather from "./Weather";
@@ -6,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 
 export default function Header() {
-  const { handleLogout, token } = useAuthContext();
-
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  const { logout } = useAuthContext();
 
   const handleHome = (e) => {
     navigate("/");
@@ -46,20 +46,20 @@ export default function Header() {
                 로그인
               </li>
             )}
-            {localStorage.getItem("token") !== null && (
+            {token && (
               <li
-                onClick={handleLogout}
+                onClick={logout}
                 className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105"
               >
                 로그아웃
               </li>
             )}
-            {!token && (
+            {token && (
               <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
                 마이페이지
               </li>
             )}
-            {!token && (
+            {token && (
               <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
                 글쓰기
               </li>
