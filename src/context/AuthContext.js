@@ -22,6 +22,7 @@ export const AuthContextProvider = ({ children }) => {
       window.location.href = "/";
     } else {
       console.error("Authentication data is not available");
+      // merge 용
     }
   };
 
