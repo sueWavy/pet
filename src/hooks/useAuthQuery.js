@@ -3,7 +3,6 @@ import axios from "axios";
 
 export const useAuthQuery = (accessToken) => {
   return useQuery("auth", () => fetchData(accessToken), {
-    // enabled: !!accessToken,
     onError: (error) => {
       console.log("Auth 데이터 실패", error);
     },

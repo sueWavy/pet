@@ -21,8 +21,7 @@ export const AuthContextProvider = ({ children }) => {
       localStorage.setItem("email", "이메일");
       window.location.href = "/";
     } else {
-      console.error("Authentication data is not available");
-      // merge 용
+      console.error("로그인 실패");
     }
   };
 

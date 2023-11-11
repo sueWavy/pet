@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import { QueryClient, QueryClientProvider } from "react-query";
+import MyPage from "./pages/MyPage";
+import Write from "./pages/Write";
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -37,6 +39,22 @@ const router = createBrowserRouter([
           <NoHeaderLayout>
             <Login />
           </NoHeaderLayout>
+        ),
+      },
+      {
+        path: "/mypage/:id",
+        element: (
+          <DefaultLayout>
+            <MyPage />
+          </DefaultLayout>
+        ),
+      },
+      {
+        path: "/write",
+        element: (
+          <DefaultLayout>
+            <Write />
+          </DefaultLayout>
         ),
       },
     ],

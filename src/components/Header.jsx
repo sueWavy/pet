@@ -31,10 +31,10 @@ export default function Header() {
               같이 산책할 땐 멍개팅
             </h1>
           </div>
-          <div className="flex items-center bg-white rounded-xl pl-3 overflow-hidden md:mb-3">
+          <form className="flex items-center bg-white rounded-xl pl-3 overflow-hidden md:mb-3">
             <input type="text" className="mr-2 focus:outline-none" />
             <BsFillSearchHeartFill className=" text-brand mr-2" />
-          </div>
+          </form>
           <ul className="flex items-center text-white space-x-5">
             {token ? (
               <li className="px-5">님 어서오세요.</li>
