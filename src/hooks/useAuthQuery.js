@@ -11,7 +11,7 @@ export const useAuthQuery = (accessToken) => {
 
 const fetchData = async (accessToken) => {
   const form = new FormData();
-  form.append("mode", "kakao");
+  form.append("mode", "check");
   form.append("token", accessToken);
 
   const response = await axios.post("http://43.201.39.118/api/login", form, {
@@ -19,6 +19,6 @@ const fetchData = async (accessToken) => {
       "Content-Type": "multipart/form-data",
     },
   });
-
+  console.log(response);
   return response.data;
 };

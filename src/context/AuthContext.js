@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { useAuthQuery } from "../hooks/useAuthQuery";
 import { useNavigate } from "react-router-dom";
 
@@ -10,8 +10,8 @@ export const AuthContextProvider = ({ children }) => {
 
   const { data: authData, isLoading, error } = useAuthQuery(accessToken);
 
-  /** 로그인 기능  */
-  const login = () => {
+  /** 카카오 로그인 기능  */
+  const kakaoLogin = () => {
     window.Kakao.Auth.authorize({
       redirectUri: "http://localhost:3000/login",
     });
@@ -34,7 +34,9 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ authData, isLoading, error, login, logout }}>
+    <AuthContext.Provider
+      value={{ authData, isLoading, error, kakaoLogin, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );

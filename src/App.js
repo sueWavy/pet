@@ -1,11 +1,12 @@
-import { Outlet } from "react-router-dom";
-import Header from "./components/Header";
 import "./App.css";
+import { Outlet } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   const { Kakao } = window;
   const KAKAO_KEY = process.env.REACT_APP_KAKAO_API;
+  const GOOGLE_KEY = process.env.REACT_APP_GOOGLE_API;
 
   if (Kakao) {
     if (!Kakao.isInitialized()) {
@@ -20,7 +21,9 @@ function App() {
   return (
     <>
       <AuthContextProvider>
-        <Outlet />
+        <GoogleOAuthProvider clientId={GOOGLE_KEY}>
+          <Outlet />
+        </GoogleOAuthProvider>
       </AuthContextProvider>
     </>
   );

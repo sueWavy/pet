@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { useAuthContext } from "../context/AuthContext";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function Login() {
   const inputStyle =
@@ -9,7 +10,7 @@ export default function Login() {
   const boxStyle =
     "w-96 flex flex-col items-center justify-center rounded-2xl p-4 bg-white space-y-3 relative z-10";
 
-  const { login } = useAuthContext();
+  const { kakaoLogin } = useAuthContext();
 
   return (
     <div className="relative w-screen h-screen flex flex-col justify-center items-center space-y-5">
@@ -27,13 +28,21 @@ export default function Login() {
         </div>
         <div className="flex flex-col space-y-3">
           <div className="flex items-center space-x-2 justify-center cursor-pointer">
-            <FcGoogle /> <span>구글로 로그인하기</span>
+            {/* <FcGoogle /> <span>구글로 로그인하기</span> */}
+            <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                console.log(credentialResponse);
+              }}
+              onError={() => {
+                console.log("Login Failed");
+              }}
+            />
           </div>
 
           <p className="text-center text-slate-400">⎯⎯⎯⎯ 또는 ⎯⎯⎯⎯</p>
           <div>
             <div
-              onClick={login}
+              onClick={kakaoLogin}
               className="flex items-center space-x-2 justify-center cursor-pointer"
             >
               <RiKakaoTalkFill /> <span>카카오로 로그인하기</span>
