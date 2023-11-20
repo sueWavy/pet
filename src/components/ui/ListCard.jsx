@@ -7,7 +7,7 @@ export default function ListCard({
   const newDate = date.toString();
 
   return (
-    <div>
+    <div className="border-solid border-slate-700 max-w-xl border-2">
       <h3>{title}</h3>
       <div>
         <p>{userName}</p>

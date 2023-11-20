@@ -8,38 +8,38 @@
 | :---------------------------- | :------------------------------------------------------------------------: |
 | React-Router                  |         현재목표 : Params로 데이터 전달넘기기, 보안구간 지정 - ing         |
 | React-Query                   | 현재목표 : 데이터 사용구간 전역세팅 및 동기적으로 데이터 관리해보기 - wait |
-| React-Recoil Or Zustand                 |                   현재목표 : 전역 데이터 관리하기 - wait                   |
+| React-Recoil Or Zustand       |                   현재목표 : 전역 데이터 관리하기 - wait                   |
 | TailWindCSS                   |            현재목표 : 반응형 웹으로 작동하기 및 다크모드 - wait            |
 | 배포(AWS,Firebase,netlify 등) |                      AWS 학습 후 배포 고민 중 - wait                       |
 
-| 프로젝트 상황            | 체크 |
-| :----------------------- | :--: |
-| 기초 세팅                | done  |
-| 라우팅 설정              | wait |
-| 레이아웃                 | wait |
-| 데이터 받아오기          | done |
-| 실시간 날씨정보 API      | done |
-| Kakao 연동 로그인 | ing |
-| Google 연동 로그인 | wait |
-| 마이페이지 및 기능       | wait |
-| 카카오 지도 API          | wait |
-| 글작성 및 수정, 삭제     | wait |
-| 좋아요, 댓글             | wait |
-| 인피니티 스크롤          | wait |
-| 최적화                   | wait |
-| 배포                     | wait |
-| 리팩토링                     | wait |
+| 프로젝트 상황        | 체크 |
+| :------------------- | :--: |
+| 기초 세팅            | done |
+| 라우팅 설정          | wait |
+| 레이아웃             | wait |
+| 데이터 받아오기      | done |
+| 실시간 날씨정보 API  | done |
+| Kakao 연동 로그인    | ing  |
+| Google 연동 로그인   | ing  |
+| 마이페이지 및 기능   | wait |
+| 카카오 지도 API      | wait |
+| 글작성 및 수정, 삭제 | wait |
+| 좋아요, 댓글         | wait |
+| 인피니티 스크롤      | wait |
+| 최적화               | wait |
+| 배포                 | wait |
+| 리팩토링             | wait |
 
 ### 📔 Tree 구조 ( src )
+
 <img width="264" alt="스크린샷 2023-11-09 오후 4 35 34" src="https://github.com/sueWavy/pet/assets/148526219/ceca9264-ec44-4dd3-95ee-b6714611eb93">
 
 ### 📋 API 명세서 ( PostMan )
+
 <img width="1390" alt="image" src="https://github.com/sueWavy/pet/assets/148526219/41463eff-f0f5-4668-9266-99d5140520c8">
 
-
-
-
 ### 🤯 트러블 슈팅
+
 ![스크린샷 2023-11-09 오후 4 50 28](https://github.com/sueWavy/pet/assets/148526219/f27a6f9b-33df-4c9d-b54f-dbf17ab6e6d0)
 
 - react-dom.development.js:86 Warning: Invalid DOM property `class`. Did you mean `className`? <br/>
