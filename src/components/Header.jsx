@@ -18,6 +18,10 @@ export default function Header() {
     navigate("/login");
   };
 
+  const handleWrite = (e) => {
+    navigate("/write");
+  };
+
   return (
     <>
       <header className="w-screen p-4 bg-brand font-[KCCChassam]">
@@ -60,7 +64,10 @@ export default function Header() {
               </li>
             )}
             {token && (
-              <li className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105">
+              <li
+                onClick={handleWrite}
+                className="cursor-pointer border border-solid rounded-lg px-5  border-white hover:scale-105"
+              >
                 글쓰기
               </li>
             )}

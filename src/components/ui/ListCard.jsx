@@ -44,9 +44,13 @@ export default function ListCard({
           <p>{petName}</p>
         </div>
       </div>
-      <img src={img} alt="사진" />
+      <img
+        className="w-full h-96 object-cover rounded-3xl"
+        src={img}
+        alt="사진"
+      />
       <p className="border-solid border-slate-700 border-b-2">{map}</p>
-      <p>{content}</p>
+      <p className="p-2">{content}</p>
     </div>
   );
 }
